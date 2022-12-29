@@ -5,26 +5,26 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UC2_Last_Name
+namespace UC3_Enter_Email
 {
     public class RegexValidation
     {
         public void Regex1()
         {
             //writing the expression as we are needed
-            string Pattern = "^[A-Z]{1}[A-Za-z]{2,}$";
-            Console.WriteLine("Enter the LastName");
-            string lastname = Console.ReadLine();
+            string Pattern = "^[a-z]{3}([.][a-z]{3})?@[a-z]{2}[.][a-z]{2}([.][a-z]{2})?";
+            Console.WriteLine("Enter the Email");
+            string email = Console.ReadLine();
 
-            Func<string, bool> result = (LastName1) => Regex.IsMatch(lastname, Pattern); //The word matches the regex
-            if (result(lastname))
+            Func<string, bool> result = (email1) => Regex.IsMatch(email, Pattern); //The word matches the regex
+            if (result(email))
             {
-                Console.WriteLine("LastName is valid");
+                Console.WriteLine("Email is valid");
 
             }
             else
             {
-                Console.WriteLine("LastName is invalid");
+                Console.WriteLine("Email is invalid");
 
             }
         }
@@ -33,9 +33,10 @@ namespace UC2_Last_Name
     {
         static void Main(string[] args)
         {
-            RegexValidation LastName = new RegexValidation();
-            LastName.Regex1();
+            RegexValidation FirstTime = new RegexValidation();
+            FirstTime.Regex1();
             Console.ReadLine();
         }
     }
 }
+
