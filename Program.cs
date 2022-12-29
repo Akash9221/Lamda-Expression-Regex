@@ -5,26 +5,26 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UC8_Password_Rule4
+namespace UC9_Clear_All_Email
 {
     public class RegexValidation
     {
         public void Regex1()
         {
             //writing the expression as we are needed
-            string Pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8}";
+            string Pattern = "^[a-z A-Z 0-9_]+[@][a-z]+.[a-z]{2,3}";
             Console.WriteLine("Enter the Password");
-            string Pass4 = Console.ReadLine();
+            string email2 = Console.ReadLine();
 
-            Func<string, bool> result = (Pass0) => Regex.IsMatch(Pass4, Pattern); //The word matches the regex
-            if (result(Pass4))
+            Func<string, bool> result = (email1) => Regex.IsMatch(email2, Pattern); //The word matches the regex
+            if (result(email2))
             {
-                Console.WriteLine("Password is valid");
+                Console.WriteLine("Email is valid");
 
             }
             else
             {
-                Console.WriteLine("Password is invalid");
+                Console.WriteLine("Email is invalid");
 
             }
         }
@@ -33,13 +33,11 @@ namespace UC8_Password_Rule4
     {
         static void Main(string[] args)
         {
-            RegexValidation pass = new RegexValidation();
-            pass.Regex1();
+            RegexValidation email = new RegexValidation();
+            email.Regex1();
             Console.ReadLine();
         }
     }
 }
-
-
 
 
