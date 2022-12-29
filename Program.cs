@@ -5,19 +5,19 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UC7_Password_Rule3
+namespace UC8_Password_Rule4
 {
     public class RegexValidation
     {
         public void Regex1()
         {
             //writing the expression as we are needed
-            string Pattern = "(?=.*[A-Z0-9])[a-zA-Z0-9]{8,}"; 
+            string Pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8}";
             Console.WriteLine("Enter the Password");
-            string Pass3 = Console.ReadLine();
+            string Pass4 = Console.ReadLine();
 
-            Func<string, bool> result = (Pass0) => Regex.IsMatch(Pass3, Pattern); //The word matches the regex
-            if (result(Pass3))
+            Func<string, bool> result = (Pass0) => Regex.IsMatch(Pass4, Pattern); //The word matches the regex
+            if (result(Pass4))
             {
                 Console.WriteLine("Password is valid");
 
@@ -39,6 +39,7 @@ namespace UC7_Password_Rule3
         }
     }
 }
+
 
 
 
