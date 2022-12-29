@@ -5,26 +5,26 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UC5_Password_8_ch
+namespace UC6_Password_UC
 {
     public class RegexValidation
     {
         public void Regex1()
         {
             //writing the expression as we are needed
-            string Pattern = "[a-z]{8,}";
+            string Pattern = "[A-Z]{1}[a-z]{8,}";
             Console.WriteLine("Enter the Password");
-            string Pass1 = Console.ReadLine();
+            string Pass2 = Console.ReadLine();
 
-            Func<string, bool> result = (pass0) => Regex.IsMatch(Pass1, Pattern); //The word matches the regex
-            if (result(Pass1))
+            Func<string, bool> result = (email1) => Regex.IsMatch(Pass2, Pattern); //The word matches the regex
+            if (result(Pass2))
             {
-                Console.WriteLine("Password is valid");
+                Console.WriteLine("MobileNumber is valid");
 
             }
             else
             {
-                Console.WriteLine("Password is invalid");
+                Console.WriteLine("MobileNumber is invalid");
 
             }
         }
@@ -33,10 +33,11 @@ namespace UC5_Password_8_ch
     {
         static void Main(string[] args)
         {
-            RegexValidation ch = new RegexValidation();
-            ch.Regex1();
+            RegexValidation email = new RegexValidation();
+            email.Regex1();
             Console.ReadLine();
         }
     }
 }
+
 
