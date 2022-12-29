@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UC1_First_Name
+namespace UC2_Last_Name
 {
     public class RegexValidation
     {
@@ -13,18 +13,18 @@ namespace UC1_First_Name
         {
             //writing the expression as we are needed
             string Pattern = "^[A-Z]{1}[A-Za-z]{2,}$";
-            Console.WriteLine("Enter the FirstName");
-            string firstname = Console.ReadLine();
+            Console.WriteLine("Enter the LastName");
+            string lastname = Console.ReadLine();
 
-            Func<string, bool> result = (firstname1) => Regex.IsMatch(firstname, Pattern);
-            if (result(firstname))
+            Func<string, bool> result = (LastName1) => Regex.IsMatch(lastname, Pattern); //The word matches the regex
+            if (result(lastname))
             {
-                Console.WriteLine("FirstNmae is valid");
+                Console.WriteLine("LastName is valid");
 
             }
             else
             {
-                Console.WriteLine("FirstNmae is invalid");
+                Console.WriteLine("LastName is invalid");
 
             }
         }
@@ -33,8 +33,8 @@ namespace UC1_First_Name
     {
         static void Main(string[] args)
         {
-            RegexValidation FirstTime = new RegexValidation();
-            FirstTime.Regex1();
+            RegexValidation LastName = new RegexValidation();
+            LastName.Regex1();
             Console.ReadLine();
         }
     }
